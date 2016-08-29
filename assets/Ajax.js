@@ -5,7 +5,6 @@ $( function() {
     defaults = {
       getUrl: 0,
       getData:0,
-      dataReturn:0,
       enableShow:0,
       element:0,
       method:'post',
@@ -28,7 +27,7 @@ $( function() {
   function _sendAjax(settings = {}, myObject = this)
   {
 
-    if(!settings.dataReturn){
+    if(!settings.getData.stopExec){
 
       $.ajax({
         url:settings.getUrl,
@@ -41,6 +40,9 @@ $( function() {
             myObject.html(data.mensagem);
             if(typeof data.getData != 'undefined'){
                settings.getData  = data.getData;
+               console.log(settings.getData.stopExec);
+            }else{
+              console.log(data);
             }
 
              _sendAjax(settings,myObject);

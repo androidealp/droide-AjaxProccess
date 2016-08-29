@@ -18,7 +18,7 @@ public function Executar()
   sleep(2);
   $dados = [
     'mensagem'=>$this->dadosReturn[1],
-    'return'=>0,
+    'stopExec'=>0,
     'getData'=>['processo'=>2]
   ];
 
@@ -26,13 +26,17 @@ public function Executar()
   {
     if($_POST['processo']<7)
     {
-      $dados['getData']=['processo'=>++$_POST['processo']];
+      $dados['getData']=[
+        'processo'=>++$_POST['processo'],
+        'stopExec'=>0
+      ];
+
       $dados['mensagem'] = $this->dadosReturn[$_POST['processo']];
-      $dados['return'] = 0;
-    }else{
-      $dados['getData']=['processo'=>7];
-      $dados['mensagem'] = $this->dadosReturn[7];
-      $dados['return'] = 1;
+
+      if($dados['getData']['processo'] == 7){
+        $dados['getData']['stopExec'] = 1;
+      }
+
     }
 
   }
