@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="assets/bootstrap.min.css">
     <link rel="stylesheet" href="assets/font-awesome.min.css">
     <style media="screen">
-      .load{
-        content:"carrengando..."
+      .hide{
+        display:none;
       }
     </style>
   </head>
@@ -26,7 +26,7 @@
         <h3 class="panel-title">text ajax</h3>
       </div>
       <div class="panel-body" id="retornoaqui">
-
+        load...
       </div>
     </div>
 
@@ -38,7 +38,7 @@
     <script src="assets/Ajax.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
-        $('#retornoaqui').AjaxProccess({getUrl:'acoes.php'});
+        $('#retornoaqui').droideProcess({getUrl:'acoes.php'});
       });
     </script>
   </body>

@@ -1,60 +1,55 @@
 $( function() {
-  $.widget('custom.AjaxProccess',{
-    options: {
-        getUrl: 0,
-        getData:0,
-        dataReturn:0,
-        enableShow:0,
-        beforeSend:'',
-    },
 
-    _create: function() {
-      dataReturn = this.options.dataReturn;
-      if(this.options.enableShow == 1)
+  $.fn.droideProcess = function(options) {
+
+    defaults = {
+      getUrl: 0,
+      getData:0,
+      dataReturn:0,
+      enableShow:0,
+      element:0,
+      method:'post',
+      beforeSend:function(){
+      },
+    };
+
+    var settings = $.extend(defaults, options );
+    settings.element = this;
+    if(settings.enableShow == 1)
       {
-        this.element.show('slow');
+        settings.element.show('slow');
       }
-      this._sendAjax(dataReturn, this.element);
-
-   },
+      _sendAjax(settings, settings.element);
 
 
-   _sendAjax(dataReturn = 0, getElement, myObject = this)
-   {
-
-     if(!dataReturn){
-       $.ajax({
-         url:this.options.getUrl,
-         data:this.options.getData,
-         method:'POST',
-         dataType:'JSON',
-         beforeSend:function(){
-
-           //myObject.options.beforeSend
-
-           if(myObject.options.getData == 0)
-           {
-              getElement.html('aguarde....');
-           }
-
-         },
-         success:function(data){
-           if(typeof data == 'object'){
-             getElement.html(data.mensagem);
-             if(typeof data.getData != 'undefined'){
-                myObject.options.getData = data.getData;
-             }
-
-              myObject._sendAjax(data.return,getElement,myObject);
-           }// detecto o tipo
-         }
-       });
-
-     } // fim do if
-
-   }
+  };
 
 
-  });
+  function _sendAjax(settings = {}, myObject = this)
+  {
+
+    if(!settings.dataReturn){
+
+      $.ajax({
+        url:settings.getUrl,
+        data:settings.getData,
+        method:settings.method,
+        dataType:'JSON',
+        beforeSend:settings.beforeSend.call(myObject),
+        success:function(data){
+          if(typeof data == 'object'){
+            myObject.html(data.mensagem);
+            if(typeof data.getData != 'undefined'){
+               settings.getData  = data.getData;
+            }
+
+             _sendAjax(settings,myObject);
+          }// detecto o tipo
+        }
+      });
+
+    } // fim do if
+
+  }
 
 });
