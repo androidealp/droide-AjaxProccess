@@ -1,3 +1,8 @@
+/*
+* Droide-ajaxprocess
+* Divide processos de execução via ajax em subrotinas definidas no servidor.
+* @author André Luiz Pereira and4563@gmail.com
+*/
 $( function() {
   // envent on load or click
   $.fn.droideProcess = function(options) {

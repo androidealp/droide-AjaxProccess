@@ -36,7 +36,7 @@
     <script src="assets/jquery-ui.js"></script>
     <!-- Bootstrap script -->
     <script src="assets/bootstrap.min.js"></script>
-    <script src="assets/ajaxproccess.js"></script>
+    <script src="assets/droide-ajaxprocess.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
         $('#retornoaqui').droideProcess({getUrl:'acoes.php',elementClick:'#teste',timeout:1500});
