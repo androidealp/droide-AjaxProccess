@@ -23,22 +23,23 @@
 
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">text ajax</h3>
+        <h3 class="panel-title">text ajax <a href="#" id="teste">clique aqui teste ajax</a></h3>
       </div>
       <div class="panel-body" id="retornoaqui">
         load...
       </div>
     </div>
 
+
     <!-- jQuery (Must for Bootstrap) -->
     <script src="assets/jquery.min.js"></script>
     <script src="assets/jquery-ui.js"></script>
     <!-- Bootstrap script -->
     <script src="assets/bootstrap.min.js"></script>
-    <script src="assets/Ajax.js"></script>
+    <script src="assets/ajaxproccess.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
-        $('#retornoaqui').droideProcess({getUrl:'acoes.php'});
+        $('#retornoaqui').droideProcess({getUrl:'acoes.php',elementClick:'#teste',timeout:1500});
       });
     </script>
   </body>
