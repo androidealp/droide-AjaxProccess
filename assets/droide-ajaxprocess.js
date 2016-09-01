@@ -54,8 +54,6 @@ $( function() {
         timeout:settings.timeout,
         beforeSend:settings.beforeSend.call(myObject),
         error:function(jqXHR, textStatus, errorThrown){
-          console.log(textStatus);
-          console.log(errorThrown);
           if(textStatus == 'timeout'){
               myObject.html(settings.textTimeout);
           }
