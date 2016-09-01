@@ -23,7 +23,7 @@
 
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">text ajax <a href="#" id="teste" class="btn btn-primary">clique aqui teste ajax</a></h3>
+        <h3 class="panel-title">Simultâneo Código acoes.php <a href="#" id="teste" class="btn btn-primary">clique aqui teste ajax</a></h3>
       </div>
       <div class="panel-body" id="retornoaqui">
         load...
@@ -32,9 +32,18 @@
 
     <div class="panel panel-primary">
       <div class="panel-heading">
-        <h3 class="panel-title">text ajax secundario</h3>
+        <h3 class="panel-title">Simultâneo Código acoes.php</h3>
       </div>
       <div class="panel-body" id="execucao_sec">
+        load...
+      </div>
+    </div>
+
+    <div class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title">Código acoes_segundo.php</h3>
+      </div>
+      <div class="panel-body" id="execucao_tec">
         load...
       </div>
     </div>
@@ -49,6 +58,7 @@
       $(document).ready(function(){
         $('#retornoaqui').droideProcess({getUrl:'acoes.php',elementClick:'#teste',timeout:4500});
         $('#execucao_sec').droideProcess({getUrl:'acoes.php',event:'load',timeout:2500});
+        $('#execucao_tec').droideProcess({getUrl:'acoes_segundo.php',event:'load'});
       });
     </script>
   </body>
