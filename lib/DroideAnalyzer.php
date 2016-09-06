@@ -5,19 +5,20 @@ class DroideAnalizer {
 public $init_memory = 0;
 public $end_memory = 0;
 public $pico = 0;
-public $htmlteste = 0;
-
+public $processos = [];
+public $getData = [];
 public function __construct()
 {
   //echo round(memory_get_usage()/1048576,2).''.' MB'."\n";
-  echo memory_get_usage().' bytes'."\n";
+  $this->init_memory = memory_get_usage().' bytes'."\n";
+  $this->getData['stopExec'] = 0;
 }
 
 public function check()
 {
     sleep(2);
     for ($i=0; $i < 100; $i++) {
-      $this->htmlteste = $this->ProgressBar($i, 'processos gerados '.$i);
+      $this->Processos = $this->ProgressBar($i, 'processos gerados '.$i);
     }
 
   echo memory_get_usage().' bytes'."\n";
