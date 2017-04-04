@@ -1,7 +1,7 @@
 <?php
 
 require_once __DIR__ .'/vendor/autoload.php';
-
+// Nova ações RicardoLps
 use Droide\AjaxProccess\DroidAjaxProgress;
 
 class Acoes extends DroidAjaxProgress
