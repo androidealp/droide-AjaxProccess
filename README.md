@@ -7,8 +7,13 @@ Droide AjaxProccess
 
 
 ## installation
+```html
+    <script src="assets/jquery.min.js"></script>
+    <!-- Bootstrap script -->
+    <script src="assets/bootstrap.min.js"></script>
+    <script src="assets/droide-ajaxprocess.js"></script>
+```
 
-(TODO)
 
 ## Basic Usage
 
@@ -34,7 +39,7 @@ $(document).ready(function(){
 | method              | Method to send request                          | post               |
 | timeout             | set Timeout to your request                     | null               |
 | textTimeout         | callback if timeout exceds the limit            | <p class="text-danger">Ops! Seu processo esgotou o tempo de execução.</p>|
-|
+
 
 ## Report
 - Report any issue [One the Github](https://github.com/androidealp/droide-AjaxProccess/issues)
