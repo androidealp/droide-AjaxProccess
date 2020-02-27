@@ -23,7 +23,7 @@
 
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Simultâneo Código acoes.php <a href="#" id="teste" class="btn btn-primary">clique aqui teste ajax</a></h3>
+        <h3 class="panel-title">Simultâneo código acoes.php <a href="#" id="teste" class="btn btn-primary">clique aqui teste ajax</a></h3>
       </div>
       <div class="panel-body" id="retornoaqui">
         load...
@@ -32,7 +32,7 @@
 
     <div class="panel panel-primary">
       <div class="panel-heading">
-        <h3 class="panel-title">Simultâneo Código acoes.php</h3>
+        <h3 class="panel-title">Visualização de código Simultâneo acoes.php</h3>
       </div>
       <div class="panel-body" id="execucao_sec">
         load...
